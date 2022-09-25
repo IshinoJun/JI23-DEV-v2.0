@@ -1,5 +1,5 @@
 import { staticPath } from '@/lib/$path';
-import { formatDate } from '@/utils/FormatUtils';
+import { formatDate, toDateJP } from '@/utils/FormatUtils';
 import { isString } from '@/utils/TypeGuardUtils';
 import Image from 'next/image';
 import { FaPen } from 'react-icons/fa';
@@ -31,9 +31,12 @@ export const BlogHeader = ({ title, publishedAt }: Props): JSX.Element => {
             <FaPen size='10px' />
             <time
               tw='text-sm block'
-              dateTime={formatDate(new Date(publishedAt), 'dateHyphen')}
+              dateTime={formatDate(
+                toDateJP(new Date(publishedAt)),
+                'dateHyphen',
+              )}
             >
-              {formatDate(new Date(publishedAt), 'dateDot')}
+              {formatDate(toDateJP(new Date(publishedAt)), 'dateDot')}
             </time>
           </div>
         )}

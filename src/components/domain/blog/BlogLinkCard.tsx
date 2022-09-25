@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import 'twin.macro';
 import type { MicroCMSListContent } from 'microcms-js-sdk';
-import { formatDate } from '@/utils/FormatUtils';
+import { formatDate, toDateJP } from '@/utils/FormatUtils';
 import { Tag } from '@/components/common/tag/tag';
 import { ScrollBar } from '@/components/common/animation/ScrollBar';
 import { pagesPath, staticPath } from '@/lib/$path';
@@ -31,9 +31,12 @@ export const BlogLinkCard = ({ title, publishedAt, tags, id }: Props) => {
             {publishedAt && (
               <time
                 tw='text-blue-gray-300 text-sm'
-                dateTime={formatDate(new Date(publishedAt), 'dateHyphen')}
+                dateTime={formatDate(
+                  toDateJP(new Date(publishedAt)),
+                  'dateHyphen',
+                )}
               >
-                {formatDate(new Date(publishedAt), 'dateDot')}
+                {formatDate(toDateJP(new Date(publishedAt)), 'dateDot')}
               </time>
             )}
             <ScrollBar>
