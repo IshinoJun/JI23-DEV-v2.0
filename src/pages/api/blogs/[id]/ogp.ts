@@ -64,7 +64,7 @@ const createOgp: NextApiHandler<Response> = async (
     family: 'inter',
   });
 
-  registerFont(path.resolve('./fonts/noto-sans-jp.ttf'), {
+  registerFont(path.resolve('./fonts/noto-sans-jp.otf'), {
     family: 'Noto Sans JP',
   });
 
