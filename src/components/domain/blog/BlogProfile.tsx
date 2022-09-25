@@ -29,7 +29,7 @@ export const BlogProfile = ({ cssInterpolation }: Props): JSX.Element => {
               href={GITHUB_LINK.href}
               target='_blank'
               rel='nofollow noopener noreferrer'
-              tw='hover:(-translate-y-1 scale-100)'
+              tw='lg:hover:(-translate-y-1 scale-100)'
               aria-label='github'
             >
               <FaGithub tw='text-blue-gray-600' size='20px' />
@@ -38,7 +38,7 @@ export const BlogProfile = ({ cssInterpolation }: Props): JSX.Element => {
               href={TWITTER_LINK.href}
               target='_blank'
               rel='nofollow noopener noreferrer'
-              tw='hover:(-translate-y-1 scale-100)'
+              tw='lg:hover:(-translate-y-1 scale-100)'
               aria-label='twitter'
             >
               <FaTwitter tw='text-blue-gray-600' size='20px' />
