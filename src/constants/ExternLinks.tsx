@@ -17,7 +17,7 @@ export const ZENN_LINK = {
 
 export const PREVIOUS_SITE_LINK = {
   type: ExternLinkType.PREVIOUS_SITE,
-  href: 'https://ji-23-dev-ishinojun.vercel.app/',
+  href: 'https://archived.ji23-dev.com/',
 };
 
 export const EXTERN_LINKS = [
