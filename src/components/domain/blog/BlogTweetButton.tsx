@@ -1,3 +1,4 @@
+import { staticPath } from '@/lib/$path';
 import Image from 'next/image';
 import React from 'react';
 import 'twin.macro';
@@ -19,7 +20,12 @@ export const BlogTweetButton = ({ id, title }: Props): JSX.Element => {
         rel='nofollow noopener noreferrer'
         target='_black'
       >
-        <Image src='/twitterLogoWhite.svg' height={17} width={31} alt='tweet' />
+        <Image
+          src={staticPath.twitterLogoWhite_svg}
+          height={17}
+          width={31}
+          alt='tweet'
+        />
         <div tw='pl-1 text-sm text-white font-bold'>Tweet</div>
       </a>
     </div>

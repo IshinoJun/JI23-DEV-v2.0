@@ -13,7 +13,7 @@ type Props = {
 export const BlogProfile = ({ cssInterpolation }: Props): JSX.Element => {
   return (
     <div tw='flex' css={cssInterpolation}>
-      <div tw='max-width[120px]'>
+      <div tw='max-width[120px] -ml-5'>
         <Image
           alt='icon'
           src={staticPath.icon_png}

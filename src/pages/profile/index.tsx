@@ -60,7 +60,7 @@ const ProfilePage = () => (
                   >
                     Twitter
                   </a>
-                  に DM をお願いします
+                  に DM をお願いします。
                 </p>
               </section>
             </FadeIn>
