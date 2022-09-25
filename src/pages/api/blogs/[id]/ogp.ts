@@ -64,12 +64,16 @@ const createOgp: NextApiHandler<Response> = async (
     family: 'inter',
   });
 
+  registerFont(path.resolve('./fonts/noto-sans-jp.ttf'), {
+    family: 'Noto Sans JP',
+  });
+
   const backgroundImage = await loadImage(
     path.resolve('./public/ogpBackground.png'),
   );
 
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
-  context.font = '60px inter sans-serif';
+  context.font = '60px inter sans-serif Noto Sans JP';
   context.textAlign = 'center';
   context.textBaseline = 'middle';
 
