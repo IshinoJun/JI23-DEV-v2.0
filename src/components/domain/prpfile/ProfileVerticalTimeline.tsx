@@ -10,7 +10,7 @@ const EXPERIENCE_DATE = [
     content: (
       <ProfileVerticalTimelineItem
         date='Jun 2022 -'
-        description='SNSサービスのiOSとAndroid版を開発中。'
+        description='SNSサービスのiOSとAndroid版を開発中'
         stack='Ionic(React) / TypeScript / NestJS / PostgreSQL'
       />
     ),
@@ -21,7 +21,7 @@ const EXPERIENCE_DATE = [
     content: (
       <ProfileVerticalTimelineItem
         date='Jun 2022 -'
-        description='自社プロダクトチームのマネジメントにも挑戦中。ビジネスサイド含めた関係者と開発フロー（アジャイル）を設計し導入'
+        description='開発チームのマネジメントにも挑戦中。ビジネスサイド含めた関係者と開発フロー（アジャイル）の検討・設計・導入'
       />
     ),
   },
@@ -63,7 +63,7 @@ const EXPERIENCE_DATE = [
     content: (
       <ProfileVerticalTimelineItem
         date='Sep 2019 - '
-        description='投資家向けCRMサービスの開発。新規開発及び既存機能の改修に関わる開発全般を担当（設計・開発・テスト・リリース・障害対応など）'
+        description='投資家向けCRMサービスの開発。新規開発及び既存機能の改修など開発全般を担当（設計・開発・テスト・リリース・障害対応など）'
         stack='React / Typescript / Spring Boot / Java / PostgreSQL / AWS'
       />
     ),
@@ -90,6 +90,6 @@ const EXPERIENCE_DATE = [
   },
 ];
 
-export const ProfileVerticalTimeline = () => {
+export const ProfileVerticalTimeline = (): JSX.Element => {
   return <VerticalTimeline date={EXPERIENCE_DATE} />;
 };
