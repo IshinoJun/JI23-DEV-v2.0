@@ -60,8 +60,8 @@ const createOgp: NextApiHandler<Response> = async (
   const canvas = createCanvas(WIDTH, HEIGHT);
   const context = canvas.getContext('2d');
 
-  registerFont(path.resolve('./fonts/ipagp.ttf'), {
-    family: 'ipagp',
+  registerFont(path.resolve('./fonts/inter.ttf'), {
+    family: 'inter',
   });
 
   const backgroundImage = await loadImage(
@@ -69,7 +69,7 @@ const createOgp: NextApiHandler<Response> = async (
   );
 
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
-  context.font = '60px ipagp';
+  context.font = '60px inter sans-serif';
   context.textAlign = 'center';
   context.textBaseline = 'middle';
 
