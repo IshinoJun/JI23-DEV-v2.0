@@ -39,7 +39,7 @@ next-env.d.ts
 /src/lib/$path.ts
 
 # aspida
-/src/lib/aspida/*
+/src/lib/aspida/microCMS/$api.ts
 
 # sitemap
 /public/robots.txt

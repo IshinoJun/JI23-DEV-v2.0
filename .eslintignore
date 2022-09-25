@@ -1,1 +1,5 @@
-/src/lib/*
+# pathpida
+/src/lib/$path.ts
+
+# aspida
+/src/lib/aspida/microCMS/$api.ts
