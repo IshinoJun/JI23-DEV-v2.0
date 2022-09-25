@@ -46,7 +46,7 @@ export const BlogProfile = ({ cssInterpolation }: Props): JSX.Element => {
           </div>
         </div>
         <p tw='text-blue-gray-100 mt-1 text-sm'>
-          某スタートアップで自社開発のアプリケーション開発をしています
+          某スタートアップで自社のアプリケーション開発をしています
         </p>
         <Link passHref href={pagesPath.profile.$url()}>
           <a tw='text-blue-gray-400 mt-3 text-xs hover:underline'>
