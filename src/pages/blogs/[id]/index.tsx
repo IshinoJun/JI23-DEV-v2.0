@@ -19,6 +19,7 @@ import { BlogHeader } from '@/components/domain/blog/BlogHeader';
 import { FadeIn } from '@/components/common/animation/FadeIn';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
+import { ConfigService } from '@/service/ConfigService';
 
 type Props = {
   blog: Blog & MicroCMSListContent;
@@ -33,10 +34,10 @@ const BlogsPage: NextPage<Props> = ({ blog, draftKey }) => {
     title: blog.title,
     type: 'article',
     description,
-    url: process.env.NEXT_PUBLIC_BASE_URL + router.asPath,
+    url: ConfigService.baseUrl + router.asPath,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL}/api/blogs/${blog.id}/ogp`,
+        url: `${ConfigService.baseUrl}/api/blogs/${blog.id}/ogp`,
       },
     ],
   };
