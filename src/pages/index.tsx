@@ -26,20 +26,22 @@ const App = () => (
     </StickyHeader>
     <div tw='overflow-hidden relative'>
       <Container cssInterpolation={tw`min-h-screen`}>
-        <section tw='sm:(mt-20) mt-8'>
-          <div tw='sm:space-x-4 flex items-center space-x-2'>
-            <div tw='sm:w-40 w-20'>
-              <Image
-                alt='icon'
-                src={staticPath.icon_png}
-                height='166px'
-                width='166px'
-              />
-            </div>
-            <TopTypedTitle />
-          </div>
-        </section>
         <FadeIn delay='100'>
+          <section tw='sm:(mt-20) mt-8'>
+            <div tw='sm:space-x-4 flex items-center space-x-2'>
+              <div tw='sm:w-40 w-20'>
+                <Image
+                  alt='icon'
+                  src={staticPath.icon_png}
+                  height='166px'
+                  width='166px'
+                />
+              </div>
+              <TopTypedTitle />
+            </div>
+          </section>
+        </FadeIn>
+        <FadeIn delay='200'>
           <section tw='sm:(mt-20) mt-8'>
             <div tw='lg:grid-cols-3 md:grid-cols-2 grid gap-6 grid-cols-1'>
               {[GlobalNavigationType.PROFILE, GlobalNavigationType.BLOGS].map(
