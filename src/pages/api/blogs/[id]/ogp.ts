@@ -73,7 +73,7 @@ const createOgp: NextApiHandler<Response> = async (
   );
 
   context.drawImage(backgroundImage, DX, DY, WIDTH, HEIGHT);
-  context.font = '60px inter sans-serif Noto Sans JP';
+  context.font = '60px inter Noto Sans JP';
   context.textAlign = 'center';
   context.textBaseline = 'middle';
 
