@@ -15,7 +15,7 @@
     "typecheck": "tsc --noEmit",
     "prepare": "husky install",
     "analyze": "ANALYZE=true npm run build",
-    "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run dev:next",
+    "vercel-build": "yum install libuuid-devel libmount-devel && cp /lib64/{libuuid,libmount,libblkid}.so.1 node_modules/canvas/build/Release/ && npm run dev",
     "postbuild": "next-sitemap"
   },
   "dependencies": {
