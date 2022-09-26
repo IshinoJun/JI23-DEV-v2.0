@@ -1,6 +1,5 @@
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  noindex: true,
   titleTemplate: '%s | JI23-DEV',
   defaultTitle: 'JI23-DEV',
   additionalMetaTags: [
