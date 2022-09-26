@@ -1,6 +1,6 @@
 {
   "name": "JI23-DEV-v2.0",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "license": "MIT",
   "scripts": {
     "dev": "run-p dev:*",
