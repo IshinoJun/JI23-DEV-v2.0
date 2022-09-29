@@ -27,7 +27,7 @@ export const BlogLinkCard = ({ title, publishedAt, tags, id }: Props) => {
               <span>{title}</span>
             </h2>
           </div>
-          <div tw='flex flex-direction[column] flex[1] justify-between mx-6 my-4'>
+          <div tw='flex flex-direction[column] flex[1] justify-between mx-4 my-4'>
             {publishedAt && (
               <time
                 tw='text-blue-gray-300 text-sm'
