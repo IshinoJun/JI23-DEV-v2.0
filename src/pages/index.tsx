@@ -24,7 +24,7 @@ const App = () => (
     <StickyHeader>
       <GlobalNavigation />
     </StickyHeader>
-    <div tw='overflow-hidden relative'>
+    <main tw='overflow-hidden relative'>
       <Container cssInterpolation={tw`min-h-screen`}>
         <FadeIn delay='100'>
           <section tw='sm:(mt-20) mt-8'>
@@ -55,7 +55,7 @@ const App = () => (
           </section>
         </FadeIn>
       </Container>
-    </div>
+    </main>
     <Footer />
   </>
 );

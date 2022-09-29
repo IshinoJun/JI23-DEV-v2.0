@@ -21,7 +21,7 @@ const ProfilePage = () => (
     <StickyHeader>
       <GlobalNavigation />
     </StickyHeader>
-    <div tw='overflow-hidden relative'>
+    <main tw='overflow-hidden relative'>
       <Container>
         <div tw='mt-4'>
           <Breadcrumb links={[{ label: 'Profile' }]} />
@@ -67,7 +67,7 @@ const ProfilePage = () => (
           </div>
         </div>
       </Container>
-    </div>
+    </main>
     <Footer />
   </>
 );

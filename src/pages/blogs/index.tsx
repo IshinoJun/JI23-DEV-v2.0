@@ -29,7 +29,7 @@ const BlogsPage: NextPage<Props> = ({ blogs }) => {
       <StickyHeader>
         <GlobalNavigation />
       </StickyHeader>
-      <div tw='overflow-hidden relative'>
+      <main tw='overflow-hidden relative'>
         <Container>
           <div tw='mt-4'>
             <Breadcrumb links={[{ label: 'Blogs' }]} />
@@ -47,7 +47,7 @@ const BlogsPage: NextPage<Props> = ({ blogs }) => {
             </div>
           </div>
         </Container>
-      </div>
+      </main>
       <Footer />
     </>
   );
