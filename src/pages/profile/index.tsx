@@ -5,7 +5,7 @@ import { Footer } from '@/components/common/footer/Footer';
 import { Container } from '@/components/common/container/Container';
 import { Breadcrumb } from '@/components/common/breadcrumb/Breadcrumb';
 import { TWITTER_LINK } from '@/constants/ExternLinks';
-import { ProfileVerticalTimeline } from '@/components/domain/prpfile/ProfileVerticalTimeline';
+import { ProfileVerticalTimeline } from '@/components/domain/profile/ProfileVerticalTimeline';
 import { FadeIn } from '@/components/common/animation/FadeIn';
 import { NextSeo } from 'next-seo';
 

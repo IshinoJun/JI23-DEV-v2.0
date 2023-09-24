@@ -1,5 +1,5 @@
 import { VerticalTimeline } from '@/components/common/timeline/VerticalTimeline';
-import { ProfileVerticalTimelineItem } from '@/components/domain/prpfile/ProfileVerticalTimelineItem';
+import { ProfileVerticalTimelineItem } from '@/components/domain/profile/ProfileVerticalTimelineItem';
 import { FaLaptopCode, FaUserTie } from 'react-icons/fa';
 import 'twin.macro';
 
