@@ -1,27 +1,49 @@
 import { VerticalTimeline } from '@/components/common/timeline/VerticalTimeline';
-import { ProfileVerticalTimelineItem } from '@/components/domain/prpfile/ProfileVerticalTimelineItem';
+import { ProfileVerticalTimelineItem } from '@/components/domain/profile/ProfileVerticalTimelineItem';
 import { FaLaptopCode, FaUserTie } from 'react-icons/fa';
 import 'twin.macro';
 
 const EXPERIENCE_DATE = [
   {
-    title: 'SNSサービスの開発',
+    title: '輸出入管理サービスの開発',
     icon: FaLaptopCode,
     content: (
       <ProfileVerticalTimelineItem
-        date='Jun 2022 -'
-        description='SNSサービスのiOSとAndroid版を開発中'
+        date='Nov 2022 - Present'
+        description='輸出入管理サービスのWEBアプリケーションを開発中'
         stack='Ionic(React) / TypeScript / NestJS / PostgreSQL'
       />
     ),
   },
   {
-    title: 'チームマネジメント',
+    title: '某スタートアップ',
+    icon: FaUserTie,
+    content: (
+      <ProfileVerticalTimelineItem
+        date='Nov 2022 - Present'
+        description='副業として従事。自社サービスのアプリケーション開発に従事'
+      />
+    ),
+  },
+  {
+    title: 'データベースサービスのチームマネジメント',
     icon: FaLaptopCode,
     content: (
       <ProfileVerticalTimelineItem
-        date='Jun 2022 -'
-        description='開発チームのマネジメントにも挑戦中。ビジネスサイド含めた関係者と開発フロー（アジャイル）の検討・設計・導入'
+        date='Jun 2022 - Present'
+        description='主に開発チームのマネジメント。ビジネスサイド含めた関係者と開発フロー（アジャイル）の検討・設計・導入'
+        stack='Next.js(React) / TypeScript / NestJS / PostgreSQL / GraphQL'
+      />
+    ),
+  },
+  {
+    title: '投資管理サービスの開発',
+    icon: FaLaptopCode,
+    content: (
+      <ProfileVerticalTimelineItem
+        date='Jun 2022 - Present'
+        description='投資管理サービスのiOSとAndroid版を開発中'
+        stack='Ionic(React) / TypeScript / NestJS / PostgreSQL'
       />
     ),
   },
@@ -30,7 +52,7 @@ const EXPERIENCE_DATE = [
     icon: FaLaptopCode,
     content: (
       <ProfileVerticalTimelineItem
-        date='Feb 2022 -'
+        date='Feb 2022 - Present'
         description='投資家向けのメディアサービスを開発。0 → 1 開発 でフロントの設計〜リリースまで1人で担当'
         stack='Next.js / Typescript / microCMS / Vercel'
       />
@@ -47,12 +69,12 @@ const EXPERIENCE_DATE = [
     ),
   },
   {
-    title: 'SNSサービスの開発',
+    title: '投資管理サービスの開発',
     icon: FaLaptopCode,
     content: (
       <ProfileVerticalTimelineItem
         date='Oct 2021 - Feb 2022'
-        description='SNSサービスのWeb版を開発。0 → 1 開発でフロント・バック共の設計〜テストまで1人で担当'
+        description='投資管理サービスのWeb版を開発。0 → 1 開発でフロント・バック共の設計〜テストまで1人で担当'
         stack='Next.js / Typescript / NestJS / PostgreSQL'
       />
     ),
@@ -62,7 +84,7 @@ const EXPERIENCE_DATE = [
     icon: FaLaptopCode,
     content: (
       <ProfileVerticalTimelineItem
-        date='Sep 2019 - '
+        date='Sep 2019 - Present'
         description='投資家向けCRMサービスの開発。新規開発及び既存機能の改修など開発全般を担当（設計・開発・テスト・リリース・障害対応など）'
         stack='React / Typescript / Spring Boot / Java / PostgreSQL / AWS'
       />
