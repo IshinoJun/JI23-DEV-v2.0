@@ -33,8 +33,8 @@ const App = () => (
                 <Image
                   alt='icon'
                   src={staticPath.icon_png}
-                  height='166px'
-                  width='166px'
+                  height={166}
+                  width={166}
                 />
               </div>
               <TopTypedTitle />

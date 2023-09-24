@@ -13,42 +13,38 @@ type Props = Blog & MicroCMSListContent;
 
 export const BlogLinkCard = ({ title, publishedAt, tags, id }: Props) => {
   return (
-    <Link href={pagesPath.blogs._id(id).$url()} passHref>
-      <a tw='flex justify-center'>
-        <Card>
-          <div tw='relative flex'>
-            <Image
-              width='640px'
-              height='336px'
-              src={staticPath.ogpBackground_png}
-              alt={title}
-            />
-            <h2 tw='text-blue-gray-900 text-base flex justify-center absolute top-1/2 left-1/2 transform[translate(-50%, -50%)] w-full px-4'>
-              <span>{title}</span>
-            </h2>
-          </div>
-          <div tw='flex flex-direction[column] flex[1] justify-between mx-4 my-4'>
-            {publishedAt && (
-              <time
-                tw='text-blue-gray-300 text-sm'
-                dateTime={formatDate(
-                  toDateJP(new Date(publishedAt)),
-                  'dateHyphen',
-                )}
-              >
-                {formatDate(toDateJP(new Date(publishedAt)), 'dateDot')}
-              </time>
-            )}
-            <ScrollBar>
-              <div tw='mt-4 mb-2 flex'>
-                {tags?.map((tag) => (
-                  <Tag key={tag.id} name={tag.name} />
-                ))}
-              </div>
-            </ScrollBar>
-          </div>
-        </Card>
-      </a>
+    <Link href={pagesPath.blogs._id(id).$url()} tw='flex justify-center'>
+      <Card>
+        <div tw='relative flex'>
+          <Image
+            width={640}
+            height={336}
+            src={staticPath.ogpBackground_png}
+            alt={title}
+          />
+          <h2 tw='text-blue-gray-900 text-base flex justify-center absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4'>
+            {title}
+          </h2>
+        </div>
+        <div tw='flex flex-col flex-[1] justify-between mx-4 my-4'>
+          {publishedAt && (
+            <time
+              tw='text-blue-gray-300 text-sm'
+              dateTime={formatDate(
+                toDateJP(new Date(publishedAt)),
+                'dateHyphen',
+              )}
+            >
+              {formatDate(toDateJP(new Date(publishedAt)), 'dateDot')}
+            </time>
+          )}
+          <ScrollBar>
+            <div tw='mt-4 mb-2 flex'>
+              {tags?.map((tag) => <Tag key={tag.id} name={tag.name} />)}
+            </div>
+          </ScrollBar>
+        </div>
+      </Card>
     </Link>
   );
 };

@@ -62,7 +62,7 @@ export const BlogText = (props: Props): JSX.Element => {
       }
       if (content.attributes?.code) {
         return (
-          <code tw='py-0.5 px-1 mx-1 bg-blue-gray-700 rounded word-break[break-all]'>
+          <code tw='py-0.5 px-1 mx-1 bg-blue-gray-700 rounded break-all'>
             {content.value}
           </code>
         );

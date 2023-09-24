@@ -21,8 +21,8 @@ export const TopExternLinkCardItem = ({ type }: Props): JSX.Element => {
         return (
           <Image
             src={staticPath.zenn_logo_only_svg}
-            height='40px'
-            width='40px'
+            height={40}
+            width={40}
             alt='zenn logo'
           />
         );

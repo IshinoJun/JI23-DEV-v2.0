@@ -18,8 +18,8 @@ import { BlogFooter } from '@/components/domain/blog/BlogFooter';
 import { BlogHeader } from '@/components/domain/blog/BlogHeader';
 import { FadeIn } from '@/components/common/animation/FadeIn';
 import { NextSeo } from 'next-seo';
-import { useRouter } from 'next/router';
 import { ConfigService } from '@/service/ConfigService';
+import { usePathname } from 'next/navigation';
 
 type Props = {
   blog: Blog & MicroCMSListContent;
@@ -27,14 +27,14 @@ type Props = {
 };
 
 const BlogsPage: NextPage<Props> = ({ blog, draftKey }) => {
-  const router = useRouter();
+  const pathname = usePathname();
 
   const description = `JI23's blog | ${blog.title}`;
   const openGraph = {
     title: blog.title,
     type: 'article',
     description,
-    url: ConfigService.baseUrl + router.asPath,
+    url: `${ConfigService.baseUrl}${pathname}`,
     images: [
       {
         url: `${ConfigService.baseUrl}/api/blogs/${blog.id}/ogp`,
@@ -72,7 +72,7 @@ const BlogsPage: NextPage<Props> = ({ blog, draftKey }) => {
           <div tw='mt-4 sm:mt-10'>
             <article>
               <BlogHeader title={blog.title} publishedAt={blog.publishedAt} />
-              <div tw='mt-8 pt-8 border-t-blue-gray-400 border-top-width[1px]'>
+              <div tw='mt-8 pt-8 border-t-blue-gray-400 border-t-[1px]'>
                 <FadeIn delay='100'>
                   {blog.tags?.map((tag, idx) => (
                     <Tag name={tag.name} key={idx} />

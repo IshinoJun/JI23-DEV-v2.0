@@ -12,7 +12,7 @@ export const TopExternLinkCard = ({ href, type }: Props): JSX.Element => {
     <a
       href={href}
       target='_blank'
-      tw='flex items-center justify-center p-4 height[120px] width[120px] rounded-2xl border bg-white transition ease-in-out delay-100 lg:hover:(-translate-y-1 scale-100)'
+      tw='flex items-center justify-center p-4 h-[120px] w-[120px] rounded-2xl border bg-white transition ease-in-out delay-100 lg:hover:(-translate-y-1 scale-100)'
       rel='nofollow noopener noreferrer'
       aria-label={type}
     >

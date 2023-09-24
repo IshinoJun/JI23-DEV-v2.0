@@ -17,10 +17,11 @@ export const Breadcrumb = ({ links }: Props): JSX.Element => {
     <nav tw='flex' aria-label='Breadcrumb'>
       <ol tw='inline-flex items-center space-x-1 md:space-x-3 overflow-x-scroll'>
         <li tw='inline-flex items-center'>
-          <Link href={pagesPath.$url()} passHref>
-            <a tw='inline-flex items-center text-sm font-medium text-blue-gray-400 hover:text-white'>
-              Home
-            </a>
+          <Link
+            href={pagesPath.$url()}
+            tw='inline-flex items-center text-sm font-medium text-blue-gray-400 hover:text-white'
+          >
+            Home
           </Link>
         </li>
         {links.map((link, idx) => (
@@ -29,10 +30,11 @@ export const Breadcrumb = ({ links }: Props): JSX.Element => {
               <li>
                 <div tw='flex items-center'>
                   <FaChevronRight tw='text-blue-gray-400' size='16px' />
-                  <Link href={link.href} passHref>
-                    <a tw='ml-1 text-sm font-medium text-blue-gray-400 hover:text-white md:ml-2 whitespace-nowrap'>
-                      {link.label}
-                    </a>
+                  <Link
+                    href={link.href}
+                    tw='ml-1 text-sm font-medium text-blue-gray-400 hover:text-white md:ml-2 whitespace-nowrap'
+                  >
+                    {link.label}
                   </Link>
                 </div>
               </li>
