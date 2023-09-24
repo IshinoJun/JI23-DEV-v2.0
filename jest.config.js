@@ -9,7 +9,6 @@ const config = {
   },
   testEnvironment: 'jsdom',
   snapshotSerializers: ['@emotion/jest/serializer'],
-  setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
 };
 
 module.exports = config;

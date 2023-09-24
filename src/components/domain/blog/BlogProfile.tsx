@@ -13,15 +13,10 @@ type Props = {
 export const BlogProfile = ({ cssInterpolation }: Props): JSX.Element => {
   return (
     <div tw='flex' css={cssInterpolation}>
-      <div tw='max-width[120px] -ml-5'>
-        <Image
-          alt='icon'
-          src={staticPath.icon_png}
-          height='166px'
-          width='166px'
-        />
+      <div tw='max-w-[120px] -ml-5'>
+        <Image alt='icon' src={staticPath.icon_png} height={166} width={166} />
       </div>
-      <div tw='flex flex-direction[column] justify-center ml-1'>
+      <div tw='flex flex-col justify-center ml-1'>
         <div tw='flex space-x-4 items-center'>
           <p tw='text-cyan-400 text-xl font-bold'>JI23</p>
           <div tw='flex space-x-3'>
@@ -48,10 +43,12 @@ export const BlogProfile = ({ cssInterpolation }: Props): JSX.Element => {
         <p tw='text-blue-gray-100 mt-1 text-sm'>
           某スタートアップで自社のアプリケーション開発をしています
         </p>
-        <Link passHref href={pagesPath.profile.$url()}>
-          <a tw='text-blue-gray-400 mt-3 text-xs hover:underline'>
-            For more information ...
-          </a>
+        <Link
+          passHref
+          href={pagesPath.profile.$url()}
+          tw='text-blue-gray-400 mt-3 text-xs hover:underline'
+        >
+          For more information ...
         </Link>
       </div>
     </div>

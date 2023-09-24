@@ -13,15 +13,16 @@ export const GlobalNavigation = () => {
     <nav tw='mx-auto max-w-5xl px-4 sm:px-6'>
       <div tw='sm:(flex space-x-12) items-center'>
         <div tw='flex justify-center'>
-          <Link href={pagesPath.$url()} passHref>
-            <a tw='flex justify-center pt-4 sm:pt-0 w-32 sm:-ml-4'>
-              <Image
-                src={staticPath.logo_png}
-                alt='logo'
-                width={788}
-                height={197}
-              />
-            </a>
+          <Link
+            href={pagesPath.$url()}
+            tw='flex justify-center pt-4 sm:pt-0 w-32 sm:-ml-4'
+          >
+            <Image
+              src={staticPath.logo_png}
+              alt='logo'
+              width={788}
+              height={197}
+            />
           </Link>
         </div>
         <ul tw='flex items-center space-x-6 justify-center'>

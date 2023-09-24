@@ -22,6 +22,7 @@ module.exports = {
       animation: {
         'fade-in':
           'fade-in 1.2s cubic-bezier(0.390, 0.575, 0.565, 1.000)   both',
+        'spin-slow': 'spin 10s linear infinite',
       },
       keyframes: {
         'fade-in': {
@@ -35,5 +36,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-animation-delay')],
 };
