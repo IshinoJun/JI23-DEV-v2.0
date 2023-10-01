@@ -1,3 +1,5 @@
+'use client';
+
 import { GlobalNavigationIcon } from '@/components/common/navigation/GlobalNavigationIcon';
 import {
   GlobalNavigationToTitle,
@@ -18,7 +20,7 @@ export const GlobalNavigationItem = ({ href, type }: Props): JSX.Element => {
     <Link
       href={href}
       className={`relative h-12 flex items-center space-x-2 text-white font-semibold before:absolute before:bottom-0 before:block before:w-full before:h-0.5  before:bg-blue-gray-600 before:transition before:scale-x-0 hover:before:scale-100 ${
-        pathname.includes(href) ? 'before:scale-x-100' : ''
+        pathname?.includes(href) ? 'before:scale-x-100' : ''
       }`}
     >
       <GlobalNavigationIcon type={type} color='white' />

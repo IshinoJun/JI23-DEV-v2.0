@@ -1,5 +1,7 @@
+'use client';
+
 import Typed, { TypedOptions } from 'typed.js';
-import { ReactNode, useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 type Props = {
   children: ReactNode;
@@ -7,6 +9,8 @@ type Props = {
 };
 
 export const TypedText = ({ children, options }: Props): JSX.Element => {
+  const [typed, setTyped] = useState<Typed | null>(null);
+
   // Create Ref element.
   const animationRef = useRef<HTMLSpanElement | null>(null);
   const stringsRef = useRef<HTMLSpanElement | null>(null);
@@ -22,6 +26,7 @@ export const TypedText = ({ children, options }: Props): JSX.Element => {
       cursorChar: '|',
       ...options,
     });
+    setTyped(typed);
 
     return () => {
       typed.destroy();
@@ -32,7 +37,7 @@ export const TypedText = ({ children, options }: Props): JSX.Element => {
     <>
       <span ref={animationRef} />
       <span ref={stringsRef}>
-        <span>{children}</span>
+        <span className={typed ? 'block' : 'hidden'}>{children}</span>
       </span>
     </>
   );

@@ -7,6 +7,7 @@ import { BlogTextBlock } from '@/components/domain/blog/BlogTextBlock';
 import { useCallback } from 'react';
 import { RichEditorContentType } from '@/enumObjects/RichEditorContentType';
 import styles from './BlogContent.module.css';
+import { BlogCodeBlock } from '@/components/domain/blog/BlogCodeBlock';
 
 type Props = RichEditorObject;
 
@@ -39,15 +40,7 @@ export const BlogContent = (props: Props) => {
         }
 
         if (content.attributes['code-block'] && !Array.isArray(content.value)) {
-          return (
-            <div className='my-5 rounded-3xl overflow-hidden' key={idx}>
-              <pre>
-                <code
-                  dangerouslySetInnerHTML={{ __html: content.value.value }}
-                />
-              </pre>
-            </div>
-          );
+          return <BlogCodeBlock code={content.value.value} key={idx} />;
         }
       }
 

@@ -1,6 +1,3 @@
-import { StickyHeader } from '@/components/common/header/StickyHeader';
-import { GlobalNavigation } from '@/components/common/navigation/GlobalNavigation';
-import { Footer } from '@/components/common/footer/Footer';
 import { Container } from '@/components/common/container/Container';
 import Image from 'next/image';
 import { staticPath } from '@/lib/$path';
@@ -10,19 +7,14 @@ import { TopExternLinksCard } from '@/components/domain/top/TopExternLinksCard';
 import { GlobalNavigationType } from '@/enumObjects/GlobalNavigationType';
 import { GradationSpin } from '@/components/common/animation/GradationSpin';
 import { FadeIn } from '@/components/common/animation/FadeIn';
-import { NextSeo } from 'next-seo';
+import { Metadata } from 'next';
 
-const description = `JI23's personal website.`;
+export const metadata: Metadata = {
+  openGraph: { type: 'website' },
+};
 
-const App = () => (
-  <>
-    <NextSeo
-      description={description}
-      openGraph={{ type: 'website', description }}
-    />
-    <StickyHeader>
-      <GlobalNavigation />
-    </StickyHeader>
+function Page() {
+  return (
     <main className='overflow-hidden relative'>
       <Container>
         <div className='min-h-screen'>
@@ -57,8 +49,7 @@ const App = () => (
         </div>
       </Container>
     </main>
-    <Footer />
-  </>
-);
+  );
+}
 
-export default App;
+export default Page;
