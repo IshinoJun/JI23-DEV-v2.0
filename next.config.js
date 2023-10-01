@@ -4,15 +4,6 @@ const nextConfig = {
     domains: ['images.microcms-assets.io'],
   },
   reactStrictMode: true,
-  swcMinify: false,
-  webpack: (config, { webpack }) => {
-    config.plugins.push(
-      new webpack.IgnorePlugin({
-        resourceRegExp: /^\.\/src\/.*\.test\.(ts|tsx)$/,
-      }),
-    );
-    return config;
-  },
 };
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

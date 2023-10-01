@@ -1,4 +1,3 @@
-import tw from 'twin.macro';
 import { StickyHeader } from '@/components/common/header/StickyHeader';
 import { GlobalNavigation } from '@/components/common/navigation/GlobalNavigation';
 import { Footer } from '@/components/common/footer/Footer';
@@ -57,9 +56,9 @@ const BlogsPage: NextPage<Props> = ({ blog, draftKey }) => {
       <StickyHeader>
         <GlobalNavigation />
       </StickyHeader>
-      <main tw='overflow-hidden relative'>
+      <main className='overflow-hidden relative'>
         <Container>
-          <div tw='mt-4'>
+          <div className='mt-4'>
             <Breadcrumb
               links={[
                 { label: 'Blogs', href: pagesPath.blogs.$url() },
@@ -68,11 +67,11 @@ const BlogsPage: NextPage<Props> = ({ blog, draftKey }) => {
             />
           </div>
         </Container>
-        <Container cssInterpolation={tw`max-w-3xl`}>
-          <div tw='mt-4 sm:mt-10'>
+        <Container size='medium'>
+          <div className='mt-4 sm:mt-10'>
             <article>
               <BlogHeader title={blog.title} publishedAt={blog.publishedAt} />
-              <div tw='mt-8 pt-8 border-t-blue-gray-400 border-t-[1px]'>
+              <div className='mt-8 pt-8 border-t-blue-gray-400 border-t-[1px]'>
                 <FadeIn delay='100'>
                   {blog.tags?.map((tag, idx) => (
                     <Tag name={tag.name} key={idx} />

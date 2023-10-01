@@ -29,6 +29,8 @@ describe('TypeGuardUtils', () => {
         value8,
         value9,
         value10,
+        value11,
+        value12,
       ].forEach((v) => expect(isString(v)).toBeFalsy());
     });
   });

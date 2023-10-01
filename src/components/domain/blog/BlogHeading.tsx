@@ -1,4 +1,3 @@
-import 'twin.macro';
 import { RichEditorTextContent } from '@/models/RichEditorObject';
 import { useCallback } from 'react';
 import { BlogText } from '@/components/domain/blog/BlogText';
@@ -14,7 +13,7 @@ export const BloHeading = ({ value, heading }: Props): JSX.Element => {
       switch (heading) {
         case 1:
           return (
-            <h1 tw='text-3xl mt-20 font-semibold'>
+            <h1 className='text-3xl mt-20 font-semibold'>
               {value.map((v, idx) => (
                 <BlogText key={idx} {...v} />
               ))}
@@ -22,7 +21,7 @@ export const BloHeading = ({ value, heading }: Props): JSX.Element => {
           );
         case 2:
           return (
-            <h2 tw='text-2xl mt-16 font-semibold'>
+            <h2 className='text-2xl mt-16 font-semibold'>
               {value.map((v, idx) => (
                 <BlogText key={idx} {...v} />
               ))}
@@ -30,7 +29,7 @@ export const BloHeading = ({ value, heading }: Props): JSX.Element => {
           );
         case 3:
           return (
-            <h3 tw='text-xl mt-14 font-semibold'>
+            <h3 className='text-xl mt-14 font-semibold'>
               {value.map((v, idx) => (
                 <BlogText key={idx} {...v} />
               ))}
@@ -38,7 +37,7 @@ export const BloHeading = ({ value, heading }: Props): JSX.Element => {
           );
         case 4:
           return (
-            <h4 tw='text-lg mt-12 font-semibold'>
+            <h4 className='text-lg mt-12 font-semibold'>
               {value.map((v, idx) => (
                 <BlogText key={idx} {...v} />
               ))}
@@ -46,7 +45,7 @@ export const BloHeading = ({ value, heading }: Props): JSX.Element => {
           );
         case 5:
           return (
-            <h5 tw='text-base mt-10 font-semibold'>
+            <h5 className='text-base mt-10 font-semibold'>
               {value.map((v, idx) => (
                 <BlogText key={idx} {...v} />
               ))}

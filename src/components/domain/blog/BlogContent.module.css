@@ -1,0 +1,7 @@
+.content > :first-child {
+  @apply mt-4;
+}
+
+.content h2 + h3 {
+  @apply mt-4;
+}

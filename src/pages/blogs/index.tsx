@@ -1,4 +1,3 @@
-import 'twin.macro';
 import { StickyHeader } from '@/components/common/header/StickyHeader';
 import { GlobalNavigation } from '@/components/common/navigation/GlobalNavigation';
 import { Footer } from '@/components/common/footer/Footer';
@@ -29,16 +28,16 @@ const BlogsPage: NextPage<Props> = ({ blogs }) => {
       <StickyHeader>
         <GlobalNavigation />
       </StickyHeader>
-      <main tw='overflow-hidden relative'>
+      <main className='overflow-hidden relative'>
         <Container>
-          <div tw='mt-4'>
+          <div className='mt-4'>
             <Breadcrumb links={[{ label: 'Blogs' }]} />
           </div>
-          <div tw='mt-8 sm:mt-10'>
-            <h1 tw='text-4xl text-white font-bold'>Blogs</h1>
-            <div tw='mt-8 space-y-10 sm:mt-10 relative'>
+          <div className='mt-8 sm:mt-10'>
+            <h1 className='text-4xl text-white font-bold'>Blogs</h1>
+            <div className='mt-8 space-y-10 sm:mt-10 relative'>
               <FadeIn delay='100'>
-                <div tw='grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
+                <div className='grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
                   {blogs.contents.map((blog) => (
                     <BlogLinkCard key={blog.id} {...blog} />
                   ))}

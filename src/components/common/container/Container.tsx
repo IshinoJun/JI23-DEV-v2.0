@@ -1,15 +1,18 @@
-import { CSSInterpolation } from '@emotion/css';
 import { ReactNode } from 'react';
-import 'twin.macro';
 
 type Props = {
   children: ReactNode;
-  cssInterpolation?: CSSInterpolation;
+  size?: keyof typeof sizeClasses;
 };
 
-export const Container = ({ children, cssInterpolation }: Props) => {
+const sizeClasses = {
+  large: 'max-w-5xl',
+  medium: 'max-w-3xl',
+};
+
+export const Container = ({ children, size = 'large' }: Props) => {
   return (
-    <div tw='sm:px-6 mx-auto max-w-5xl px-4 relative' css={cssInterpolation}>
+    <div className={`sm:px-6 mx-auto px-4 relative ${sizeClasses[size]}`}>
       {children}
     </div>
   );

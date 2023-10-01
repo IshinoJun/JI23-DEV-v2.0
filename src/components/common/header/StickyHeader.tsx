@@ -1,4 +1,3 @@
-import 'twin.macro';
 import { ReactNode } from 'react';
 
 type Props = {
@@ -7,7 +6,7 @@ type Props = {
 
 export const StickyHeader = ({ children }: Props): JSX.Element => {
   return (
-    <header tw='bg-gradient-to-r from-blue-gray-900 to-blue-gray-800  sticky top-0 z-50'>
+    <header className='bg-gradient-to-r from-blue-gray-900 to-blue-gray-800  sticky top-0 z-50'>
       {children}
     </header>
   );

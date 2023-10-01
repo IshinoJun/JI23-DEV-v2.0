@@ -4,7 +4,6 @@ import { FaGithub, FaTwitter } from 'react-icons/fa';
 import Image from 'next/image';
 import { unreachable } from '@/utils/ErrorHandlingUtils';
 import { useCallback } from 'react';
-import 'twin.macro';
 
 type Props = {
   type: ExternLinkType;
@@ -14,9 +13,9 @@ export const TopExternLinkCardItem = ({ type }: Props): JSX.Element => {
   const typeToElement = useCallback(() => {
     switch (type) {
       case ExternLinkType.GITHUB:
-        return <FaGithub tw='text-blue-gray-600' size='40px' />;
+        return <FaGithub className='text-blue-gray-600' size='40px' />;
       case ExternLinkType.TWITTER:
-        return <FaTwitter tw='text-blue-gray-600' size='40px' />;
+        return <FaTwitter className='text-blue-gray-600' size='40px' />;
       case ExternLinkType.ZENN:
         return (
           <Image
@@ -28,7 +27,7 @@ export const TopExternLinkCardItem = ({ type }: Props): JSX.Element => {
         );
       case ExternLinkType.PREVIOUS_SITE:
         return (
-          <span tw='text-xl font-medium text-blue-gray-600'>
+          <span className='text-xl font-medium text-blue-gray-600'>
             Previous
             <br />
             Site.

@@ -3,18 +3,17 @@ import {
   RichEditorTextContentAttributes,
 } from '@/models/RichEditorObject';
 import { useCallback } from 'react';
-import tw from 'twin.macro';
 
 type Props = RichEditorTextContent;
 
 const styles = {
-  'bold-italic-underline': tw`font-bold italic underline`,
-  'bold-italic': tw`font-bold italic`,
-  'bold-underline': tw`font-bold underline`,
-  'italic-underline': tw`font-bold italic`,
-  bold: tw`font-bold`,
-  italic: tw`italic`,
-  underline: tw`underline`,
+  'bold-italic-underline': 'font-bold italic underline',
+  'bold-italic': 'font-bold italic',
+  'bold-underline': 'font-bold underline',
+  'italic-underline': 'font-bold italic',
+  bold: 'font-bold',
+  italic: 'italic',
+  underline: 'underline',
 };
 
 export const BlogText = (props: Props): JSX.Element => {
@@ -50,11 +49,10 @@ export const BlogText = (props: Props): JSX.Element => {
       if (content.attributes?.link) {
         return (
           <a
-            tw='text-cyan-400 hover:underline'
+            className={`text-cyan-400 hover:underline ${content.attributes}`}
             href={content.attributes.link}
             rel={content.attributes.rel}
             target={content.attributes.target}
-            css={getStyle(content.attributes)}
           >
             {content.value}
           </a>
@@ -62,7 +60,7 @@ export const BlogText = (props: Props): JSX.Element => {
       }
       if (content.attributes?.code) {
         return (
-          <code tw='py-0.5 px-1 mx-1 bg-blue-gray-700 rounded break-all'>
+          <code className='py-0.5 px-1 mx-1 bg-blue-gray-700 rounded break-all'>
             {content.value}
           </code>
         );
@@ -73,7 +71,9 @@ export const BlogText = (props: Props): JSX.Element => {
         content.attributes?.italic ||
         content.attributes?.underline
       ) {
-        return <span css={getStyle(content.attributes)}>{content.value}</span>;
+        return (
+          <span className={getStyle(content.attributes)}>{content.value}</span>
+        );
       }
 
       if (content.value === '\n') {

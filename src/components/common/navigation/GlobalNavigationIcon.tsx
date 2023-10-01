@@ -2,7 +2,6 @@ import { GlobalNavigationType } from '@/enumObjects/GlobalNavigationType';
 import { unreachable } from '@/utils/ErrorHandlingUtils';
 import { useCallback } from 'react';
 import { FaFileAlt, FaUserCircle } from 'react-icons/fa';
-import tw from 'twin.macro';
 
 type Props = {
   type: GlobalNavigationType;
@@ -10,7 +9,7 @@ type Props = {
   color?: 'white';
 };
 
-const styles = { white: tw`text-white` };
+const styles = { white: 'text-white' };
 
 export const GlobalNavigationIcon = ({
   type,
@@ -23,14 +22,14 @@ export const GlobalNavigationIcon = ({
         return (
           <FaUserCircle
             size={size}
-            css={color ? styles[color] : tw`text-blue-gray-600`}
+            className={color ? styles[color] : 'text-blue-gray-600'}
           />
         );
       case GlobalNavigationType.BLOGS:
         return (
           <FaFileAlt
             size={size}
-            css={color ? styles[color] : tw`text-blue-gray-600`}
+            className={color ? styles[color] : 'text-blue-gray-600'}
           />
         );
       default:
