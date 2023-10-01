@@ -20,7 +20,6 @@
       "~/public/*": ["public/*"]
     }
   },
-  "files": ["src/lib/twin/typings/twin.d.ts"],
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "jest.config.js"],
   "exclude": ["node_modules"]
 }

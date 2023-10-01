@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply antialiased bg-gradient-to-r from-blue-gray-900 to-blue-gray-800 bg-blue-gray-900;
+  @apply font-body;
+}
+
+p {
+  @apply leading-7;
+}

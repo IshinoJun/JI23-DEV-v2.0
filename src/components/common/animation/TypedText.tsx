@@ -1,6 +1,5 @@
 import Typed, { TypedOptions } from 'typed.js';
 import { ReactNode, useEffect, useRef } from 'react';
-import 'twin.macro';
 
 type Props = {
   children: ReactNode;

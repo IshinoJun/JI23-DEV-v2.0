@@ -1,6 +1,3 @@
-import GlobalStyles from '@/components/common/styles/GlobalStyles';
-import { cache } from '@emotion/css';
-import { CacheProvider } from '@emotion/react';
 import { AppProps } from 'next/app';
 import 'highlight.js/styles/github-dark.css';
 import { DefaultSeo } from 'next-seo';
@@ -9,6 +6,7 @@ import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { ConfigService } from '@/service/ConfigService';
 import { pageView } from '@/lib/gtag';
+import '../styles/global.css';
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -27,11 +25,10 @@ const App = ({ Component, pageProps }: AppProps) => {
   }, [router.events]);
 
   return (
-    <CacheProvider value={cache}>
-      <GlobalStyles />
+    <>
       <DefaultSeo {...SEO} />
       <Component {...pageProps} />
-    </CacheProvider>
+    </>
   );
 };
 

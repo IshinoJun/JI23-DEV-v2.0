@@ -1,4 +1,3 @@
-import tw from 'twin.macro';
 import { RichEditorContent, RichEditorObject } from '@/models/RichEditorObject';
 import { BloHeading } from '@/components/domain/blog/BlogHeading';
 import { BlogBulletList } from '@/components/domain/blog/BlogBulletList';
@@ -7,6 +6,7 @@ import { BlogImage } from '@/components/domain/blog/BlogImage';
 import { BlogTextBlock } from '@/components/domain/blog/BlogTextBlock';
 import { useCallback } from 'react';
 import { RichEditorContentType } from '@/enumObjects/RichEditorContentType';
+import styles from './BlogContent.module.css';
 
 type Props = RichEditorObject;
 
@@ -40,7 +40,7 @@ export const BlogContent = (props: Props) => {
 
         if (content.attributes['code-block'] && !Array.isArray(content.value)) {
           return (
-            <div tw='my-5 rounded-3xl overflow-hidden' key={idx}>
+            <div className='my-5 rounded-3xl overflow-hidden' key={idx}>
               <pre>
                 <code
                   dangerouslySetInnerHTML={{ __html: content.value.value }}
@@ -71,10 +71,7 @@ export const BlogContent = (props: Props) => {
   );
 
   return (
-    <div
-      tw='text-blue-gray-300'
-      css={{ '>:first-child': tw`mt-4`, 'h2 + h3': tw`mt-4` }}
-    >
+    <div className={`text-blue-gray-300 ${styles.content}`}>
       {props.contents.map((c, idx) => generateElement(c, idx))}
     </div>
   );
