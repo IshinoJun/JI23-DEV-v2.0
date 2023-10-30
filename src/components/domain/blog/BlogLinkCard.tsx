@@ -11,7 +11,10 @@ type Props = Blog & MicroCMSListContent;
 
 export const BlogLinkCard = ({ title, publishedAt, tags, id }: Props) => {
   return (
-    <Link href={pagesPath.blogs._id(id).$url()} className='flex justify-center'>
+    <Link
+      href={pagesPath.blogs._id(id).$url().path}
+      className='flex justify-center'
+    >
       <Card>
         <div className='relative flex'>
           <Image
@@ -36,7 +39,7 @@ export const BlogLinkCard = ({ title, publishedAt, tags, id }: Props) => {
               {formatDate(toDateJP(new Date(publishedAt)), 'dateDot')}
             </time>
           )}
-          <div className='mt-4 mb-2 flex'>
+          <div className='mt-4 mb-2 flex overflow-scroll'>
             {tags?.map((tag) => <Tag key={tag.id} name={tag.name} />)}
           </div>
         </div>
