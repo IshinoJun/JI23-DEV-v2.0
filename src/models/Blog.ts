@@ -6,8 +6,8 @@ export type Blog = {
   title: string;
   category: Category;
   tags?: Tag[];
-  // どっちかは必ずある
-  content: string;
+  // 古いやつ
+  content?: string;
   contentV2: string;
   blogImage: MicroCMSImage;
 };
