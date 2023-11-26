@@ -5,12 +5,12 @@ import { Metadata, NextPage, ResolvingMetadata } from 'next';
 import { microCMSClient } from '@/clients/microCMS/microCMSClient';
 import { pagesPath } from '@/lib/$path';
 import { Tag } from '@/components/common/tag/tag';
-import { BlogContent } from '@/components/domain/blog/BlogContent';
 import { BlogFooter } from '@/components/domain/blog/BlogFooter';
 import { BlogHeader } from '@/components/domain/blog/BlogHeader';
 import { FadeIn } from '@/components/common/animation/FadeIn';
 import { draftMode } from 'next/headers';
 import { ConfigService } from '@/service/ConfigService';
+import { BlogContent } from '@/components/domain/blog/BlogContent';
 
 type Props = {
   params: { id: string };
@@ -24,12 +24,10 @@ const getBlog = async (
 ) => {
   if (draftKey && isEnabled) {
     return await microCMSClient.blogs._id(id).$get({
-      query: { draftKey, richEditorFormat: 'object' },
+      query: { draftKey },
     });
   } else {
-    return await microCMSClient.blogs._id(id).$get({
-      query: { richEditorFormat: 'object' },
-    });
+    return await microCMSClient.blogs._id(id).$get();
   }
 };
 
@@ -40,6 +38,7 @@ export async function generateMetadata({
   const { isEnabled } = draftMode();
   const blog = await getBlog(params.id, searchParams.draftKey, isEnabled);
   const description = `JI23's blog | ${blog.title}`;
+  blog.content;
 
   return {
     title: blog.title,
@@ -49,7 +48,7 @@ export async function generateMetadata({
       type: 'article',
       description,
       url: `${ConfigService.baseUrl}/blogs/${blog.id}`,
-      images: `/api/blogs/${blog.id}/ogp?title=${blog.title}111111111111111111111111111111111111111111111jjdfasjajsjjsjjjsajasjああああああああ`,
+      images: `/api/blogs/${blog.id}/ogp?title=${blog.title}`,
     },
   };
 }
@@ -85,7 +84,7 @@ const BlogsPage: NextPage<Props> = async ({
                   ))}
                 </FadeIn>
                 <FadeIn delay='200'>
-                  <BlogContent contents={blog.content.contents} />
+                  <BlogContent source={blog.contentV2} />
                 </FadeIn>
               </div>
               <FadeIn delay='300'>
