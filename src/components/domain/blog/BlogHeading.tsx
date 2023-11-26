@@ -1,6 +1,4 @@
-import { RichEditorTextContent } from '@/models/RichEditorObject';
 import { ReactNode, useCallback } from 'react';
-import { BlogText } from '@/components/domain/blog/BlogText';
 import { unreachable } from '@/utils/ErrorHandlingUtils';
 
 type Props = {
