@@ -13,7 +13,8 @@ import { draftMode } from 'next/headers';
 import { ConfigService } from '@/service/ConfigService';
 
 type Props = {
-  params: { id: string; draftKey: string | null };
+  params: { id: string };
+  searchParams: { draftKey: string | null };
 };
 
 const getBlog = async (
@@ -32,12 +33,12 @@ const getBlog = async (
   }
 };
 
-export async function generateMetadata(
-  { params: { id, draftKey } }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+  searchParams,
+}: Props): Promise<Metadata> {
   const { isEnabled } = draftMode();
-  const blog = await getBlog(id, draftKey, isEnabled);
+  const blog = await getBlog(params.id, searchParams.draftKey, isEnabled);
   const description = `JI23's blog | ${blog.title}`;
 
   return {
@@ -48,12 +49,15 @@ export async function generateMetadata(
       type: 'article',
       description,
       url: `${ConfigService.baseUrl}/blogs/${blog.id}`,
-      images: `/api/blogs/${blog.id}/ogp`,
+      images: `/api/blogs/${blog.id}/ogp?title=${blog.title}111111111111111111111111111111111111111111111jjdfasjajsjjsjjjsajasjああああああああ`,
     },
   };
 }
 
-const BlogsPage: NextPage<Props> = async ({ params: { id, draftKey } }) => {
+const BlogsPage: NextPage<Props> = async ({
+  params: { id },
+  searchParams: { draftKey },
+}) => {
   const { isEnabled } = draftMode();
   const blog = await getBlog(id, draftKey, isEnabled);
 
