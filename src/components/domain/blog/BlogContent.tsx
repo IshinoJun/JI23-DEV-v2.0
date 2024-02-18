@@ -114,8 +114,8 @@ const options: HTMLReactParserOptions = {
           />
         );
       }
-      // 改行は一旦無視
-      if (name === 'br') return <></>;
+
+      if (name === 'br') return <br />;
     }
   },
 };
