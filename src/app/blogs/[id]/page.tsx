@@ -94,7 +94,6 @@ const BlogsPage: NextPage<Props> = async ({
           </div>
         </Container>
       </main>
-      <Footer />
     </>
   );
 };
