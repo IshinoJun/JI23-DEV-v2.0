@@ -41,13 +41,14 @@ export async function generateMetadata({
   blog.content;
 
   return {
+    metadataBase: new URL(ConfigService.baseUrl),
     title: blog.title,
     description,
     openGraph: {
       title: blog.title,
       type: 'article',
       description,
-      url: `${ConfigService.baseUrl}/blogs/${blog.id}`,
+      url: `/blogs/${blog.id}`,
       images: `/api/blogs/${blog.id}/ogp?title=${blog.title}`,
     },
   };
