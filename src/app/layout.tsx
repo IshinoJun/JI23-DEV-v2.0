@@ -5,10 +5,12 @@ import { StickyHeader } from '@/components/common/header/StickyHeader';
 import { GlobalNavigation } from '@/components/common/navigation/GlobalNavigation';
 import { Footer } from '@/components/common/footer/Footer';
 import { Metadata } from 'next';
+import { ConfigService } from '@/service/ConfigService';
 
 const description = `JI23's personal website.`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(ConfigService.baseUrl),
   description,
   title: { default: 'JI23-DEV', template: '%s | JI23-DEV' },
   creator: 'JI23',
@@ -17,10 +19,9 @@ export const metadata: Metadata = {
     type: 'article',
     locale: 'ja_JP',
     siteName: 'JI23-DEV',
-    url: process.env.NEXT_PUBLIC_BASE_URL,
     images: [
       {
-        url: `${process.env.NEXT_PUBLIC_BASE_URL ?? ''}/ogp.png`,
+        url: `/ogp.png`,
       },
     ],
   },
