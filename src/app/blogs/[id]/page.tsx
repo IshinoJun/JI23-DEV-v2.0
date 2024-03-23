@@ -31,6 +31,8 @@ const getBlog = async (
   }
 };
 
+export const dynamic = 'force-static';
+
 export async function generateMetadata({
   params,
   searchParams,
