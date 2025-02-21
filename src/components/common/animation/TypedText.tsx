@@ -15,6 +15,8 @@ export const TypedText = ({ children, options }: Props): JSX.Element => {
   const animationRef = useRef<HTMLSpanElement | null>(null);
   const stringsRef = useRef<HTMLSpanElement | null>(null);
 
+  console.log(process.env.NEXT_PUBLIC_VERCEL_ENV);
+
   useEffect(() => {
     if (!animationRef.current || !stringsRef.current) return;
 
