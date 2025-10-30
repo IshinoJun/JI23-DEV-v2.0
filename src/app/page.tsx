@@ -8,9 +8,20 @@ import { GlobalNavigationType } from '@/enumObjects/GlobalNavigationType';
 import { GradationSpin } from '@/components/common/animation/GradationSpin';
 import { FadeIn } from '@/components/common/animation/FadeIn';
 import { Metadata } from 'next';
+import { ConfigService } from '@/service/ConfigService';
+
+const description = `JI23's personal website.`;
 
 export const metadata: Metadata = {
-  openGraph: { type: 'website' },
+  metadataBase: new URL(ConfigService.baseUrl),
+  description,
+  openGraph: {
+    title: 'JI23-DEV',
+    description,
+    type: 'website',
+    url: ConfigService.baseUrl,
+    images: `/ogp.png`,
+  },
 };
 
 function Page() {
