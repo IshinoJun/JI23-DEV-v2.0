@@ -15,15 +15,13 @@ export const metadata: Metadata = {
   title: { default: 'JI23-DEV', template: '%s | JI23-DEV' },
   creator: 'JI23',
   openGraph: {
+    title: 'JI23-DEV',
     description,
     type: 'article',
     locale: 'ja_JP',
     siteName: 'JI23-DEV',
-    images: [
-      {
-        url: `/ogp.png`,
-      },
-    ],
+    images: `/ogp.png`,
+    url: ConfigService.baseUrl,
   },
   twitter: {
     card: 'summary_large_image',
