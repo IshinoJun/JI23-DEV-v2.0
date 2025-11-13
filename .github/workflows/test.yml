@@ -11,9 +11,6 @@ jobs:
 
       - name: Install runtimes with asdf
         uses: asdf-vm/actions/install@v3
-        with:
-          asdf_global_file: .tool-versions
-          cache: true
 
       - run: npm ci
       - run: npm test
