@@ -1,4 +1,7 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 . "$(dirname -- "$0")/_/husky.sh"
+
+# Ensure asdf-managed shims/binaries (node, npm, etc.) are on PATH for git hooks
+export PATH="$HOME/.asdf/shims:$HOME/.asdf/bin:$PATH"
 
 npm run lint-staged
