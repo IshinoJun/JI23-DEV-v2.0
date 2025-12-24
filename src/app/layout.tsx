@@ -1,6 +1,6 @@
 import { GoogleAnalytics } from '@/components/common/GoogleAnalytics';
 import './global.css';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import { StickyHeader } from '@/components/common/header/StickyHeader';
 import { GlobalNavigation } from '@/components/common/navigation/GlobalNavigation';
 import { Footer } from '@/components/common/footer/Footer';
@@ -29,10 +29,10 @@ export const metadata: Metadata = {
   icons: ['/icon.png'],
 };
 
-const RampartOneFont = Inter({
-  weight: ['400', '500', '600', '700'],
-  subsets: ['latin'],
-});
+// const RampartOneFont = Inter({
+//   weight: ['400', '500', '600', '700'],
+//   subsets: ['latin'],
+// });
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -40,7 +40,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <GoogleAnalytics />
       </head>
-      <body className={RampartOneFont.className}>
+      <body className='font-sans'>
         <StickyHeader>
           <GlobalNavigation />
         </StickyHeader>
